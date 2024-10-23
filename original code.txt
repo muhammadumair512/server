@@ -1,0 +1,27 @@
+<iframe
+ id="dify-chat-iframe"
+ src="https://dify-ll9md-u18694.vm.elestio.app/chatbot/rv6KFmnCkKKDXwtp"
+ style="width: 100%; height: 100%; min-height: 700px"
+ frameborder="0"
+ allow="microphone">
+</iframe>
+
+<script>
+  // Function to remove the max-width class from the element
+  function removeMaxWidthClass(iframe) {
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    
+    // Wait until the iframe's content is fully loaded
+    const targetElement = iframeDocument.querySelector('div.max-w-\\[720px\\]');
+    
+    if (targetElement) {
+      // Remove the max-w-[720px] class
+      targetElement.classList.remove('max-w-[720px]');
+    }
+  }
+
+  // Wait for the iframe to load
+  document.getElementById('dify-chat-iframe').onload = function() {
+    removeMaxWidthClass(this);
+  };
+</script>
